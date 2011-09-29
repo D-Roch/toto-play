@@ -102,7 +102,8 @@ public class Application extends Controller {
 		Article article = q.get(slug);
 		//System.out.print(Http.Request.current().path);
 		String disqus = Play.configuration.getProperty("toto.disqus");
-    	render(article, disqus);
+		String title = Play.configuration.getProperty("toto.title");
+    	render(title, article, disqus);
 	}
 
 	public static void about() {
