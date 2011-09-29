@@ -1,5 +1,5 @@
 #{extends 'layout.html' /}
-#{set title:'Home' /}
+#{set title:Play.configuration.getProperty("toto.title") /}
 <section id="articles">
   #{list items:articles, as:'article'}
     <article class="post">

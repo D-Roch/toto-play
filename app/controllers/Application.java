@@ -17,6 +17,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Map.Entry;
 
+import org.omg.CORBA.Current;
+
 import models.*;
 
 public class Application extends Controller {
@@ -25,7 +27,6 @@ public class Application extends Controller {
 
 	@Before
 	public static void loadConf() {
-		//Play.configuration.getProperty("toto.author");
 		//Play.configuration.getProperty("toto.author");
 	}
 
@@ -99,6 +100,7 @@ public class Application extends Controller {
 
 	public static void article(String yyyy, String MM, String dd, String slug) {
 		Article article = q.get(slug);
+		//System.out.print(Http.Request.current().path);
 		String disqus = Play.configuration.getProperty("toto.disqus");
     	render(article, disqus);
 	}
